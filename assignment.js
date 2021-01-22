@@ -1,3 +1,5 @@
+// https://github.com/irajmunshy/Problem-Solving/blob/main/assignment.js
+
 // kilometer to meter
 function kilometerToMeter(kilometer) {
     var convert = kilometer * 1000;
@@ -22,28 +24,22 @@ function budgetCalculator(watch, phone, computer) {
     computerPrice = computer * 500;
 
     if (watch < 0 && phone >= 0 && computer >= 0) {
-        console.log("The Watch Will Not Have a Negative Value.");
-        return phonePrice + computerPrice;
+        return "The Watch Will Not Have a Negative Value.";
     } 
     else if (phone < 0 && watch >= 0 && computer >= 0) {
-        console.log("The Phone Will Not Have a Negative Value.");
-        return watchPrice + computerPrice;
+        return "The Phone Will Not Have a Negative Value.";
     } 
     else if (computer < 0 && watch >= 0 && phone >= 0) {
-        console.log("The Computer Will Not Have a Negative Value.");
-        return watchPrice + phonePrice;
+        return "The Computer Will Not Have a Negative Value.";
     } 
     else if (computer < 0 && watch < 0 && phone >= 0) {
-        console.log("The Watch And Computer Will Not Have a Negative Value.");
-        return phonePrice;
+        return "The Watch And Computer Will Not Have a Negative Value.";
     } 
     else if (computer < 0 && watch >=0 && phone < 0) {
-        console.log("The Phone And Computer Will Not Have a Negative Value.");
-        return watchPrice;
+        return "The Phone And Computer Will Not Have a Negative Value.";
     } 
     else if (watch < 0 && phone < 0 && computer >= 0) {
-        console.log("The Watch And Phone Will Not Have a Negative Value.");
-        return computerPrice;
+        return "The Watch And Phone Will Not Have a Negative Value.";
     }
     else if (watch < 0 && phone < 0 && computer < 0) {
         return "Negative Values is Not Allowed."
@@ -73,15 +69,15 @@ function hotelCost(day) {
     if (day != 0) {
         total = total + (day * 100);
     }
-    return total;
+
+    if (total < 0) {
+        return "Hotel Cost Are Not Negative Values.";
+    } else {
+        return total;
+    }
 }
 var totalHotelCost = hotelCost(50);
-
-if (totalHotelCost < 0) {
-    console.log("Hotel Cost Are Not Negative Values.");
-} else {
-    console.log(totalHotelCost);
-}
+console.log(totalHotelCost);
 
 
 
@@ -96,7 +92,9 @@ function megaFriend(allName) {
         }
     }
 
-    if ((maxValue[0] >= 'A' && maxValue[0] <= 'Z') || (maxValue[0] >= 'a' && maxValue[0] <= 'z')) {
+    if (allName.length < 1) {
+        return "This Array is Empty!";
+    } else if ((maxValue[0] >= 'A' && maxValue[0] <= 'Z') || (maxValue[0] >= 'a' && maxValue[0] <= 'z')) {
         return maxValue;
     } else {
         return "This Value is Not Matching.";
