@@ -2,16 +2,16 @@
 
 // kilometer to meter
 function kilometerToMeter(kilometer) {
-    var convert = kilometer * 1000;
+    var meter = kilometer * 1000;
 
-    if (convert < 0) {
+    if (meter < 0) {
         return "Kilometers Are Not Negative Values."
     } else {
-        return convert;
+        return meter;
     }
 }
-var meter = kilometerToMeter(3);
-console.log(meter);
+var totalDistance = kilometerToMeter(3);
+console.log(totalDistance);
 
 
 
@@ -64,7 +64,7 @@ function hotelCost(day) {
     }
     if (day > 10) {
         total = total + ((day - 10) * 80);
-        day = day - 10;
+        day = 10;
     }
     if (day != 0) {
         total = total + (day * 100);
@@ -76,7 +76,7 @@ function hotelCost(day) {
         return total;
     }
 }
-var totalHotelCost = hotelCost(50);
+var totalHotelCost = hotelCost(20);
 console.log(totalHotelCost);
 
 
